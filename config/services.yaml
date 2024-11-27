@@ -28,3 +28,10 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+    # Modify the order item quantity modifier to use 10 as step
+    # On default quantity was 1, and it was not possible to change it
+    app.order_item_quantity_modifier:
+        class: App\Order\Modifier\CustomOrderItemQuantityModifier
+        arguments:
+            - '@sylius.factory.order_item_unit'
+        decorates: sylius.modifier.cart.limiting_order_item_quantity

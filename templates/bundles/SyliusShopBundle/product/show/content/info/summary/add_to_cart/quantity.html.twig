@@ -1,0 +1,5 @@
+<div class="mb-4">
+    {{ form_row(hookable_metadata.context.form.cartItem.quantity, {
+        'attr': {'step': 10, 'min': 10}
+    }|sylius_merge_recursive(sylius_test_form_attribute('quantity'))) }}
+</div>

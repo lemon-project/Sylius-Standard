@@ -61,3 +61,7 @@ phpstan.neon
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
+
+# prevent local and sensitive data from being committed
+.idea/
+config/encryption/dev.key
